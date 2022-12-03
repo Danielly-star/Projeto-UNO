@@ -1,7 +1,20 @@
-# Projeto-UNO
+# Jogo-Uno
+Trabalho final de disciplina de programção e desenvolvimento de software 2 da UFMG
+# Resumo do jogo
+O jogo começará com um logo que foi feito utilizando o site <https://manytools.org/hacker-tools/convert-images-to-ascii-art/>
+Após você será apresentado com 2 opções Jogar e tutorial.
+Se for escolhido jogar você irá ao jogo, se for escolhido tutorial você irá ao tutorial.
+Para aqueles que são curiosos há uma opção extra como easter egg nessa parte, para acha-la você precisa "fucar" o código :p.
+Na parte do jogo é o clássico UNO que todos conhecem, vence quem ficar sem cartas na mão!
+# Sobre o desenvolvimento
+Foram utilizadas técnincas obtidas ao longo do semestre para confecção do jogo
+Abaixo há uma lista citando algumas das técnincas e métodos utilizados no código
 
-Este é um trabalho prático da disciplina de PDS2 no qual os alunos devem desenvolver um sistema completo de temas sugeridos pelo professor a partir dos conhecimentos adquiridos durante a disciplina. O grupo em questão decidiu desenvolver o sistema do jogo de cartas UNO muito popular entre os jovens e de fácil compreensão.
-
-O UNO pode ser jogado por qualquer pessoa em um grupo de dois a dez integrantes cujo objetivo é ser o primeiro jogador a ficar sem cartas na mão. Nesse sentido, para alcançar esse episódio o jogador terá que jogar uma carta de cada vez, que corresponda ao número ou cor da carta jogada anteriormente, ou, ainda, uma carta coringa. Diante disso, caso o jogador não tenha nenhuma carta em mãos que atenda aos critérios da sua rodada para jogar este deverá comprar cartas até conseguir realizar a sua jogada. Destarte, o jogador devera sinalizar que está com somente uma carta em mãos “gritando UNO” e o jogo finalmente termina quando todos os jogadores ficarem sem cartas.
-
-Por fim, nosso sistema irá funcionar no windows e os requisitos funcionais desejados para o nosso sistema, também denominados como User Stories, estão anexados no “Issues” para leitura. 
+* Interfaces (Classes abstratas)
+* Herança
+* Polimorfismo
+* Tratamento de excessões com Try & Catch
+* Funções
+* Loops
+* Modularização
+* Makefile
