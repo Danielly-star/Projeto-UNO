@@ -71,6 +71,13 @@ void JogoUno::Jogo(int numero_jogadores)
     }
         int n_carta;
         CARTA: cin >> n_carta;
+        while (cin.fail())
+        {
+        cin.clear();
+        cin.ignore();
+        cout << "Escolha invalida, favor escrever somente numeros inteiros" << '\n';
+        cin >> n_carta;
+        }
 
         //Aqui fica a opção de se pular a vez
         if (n_carta == 0)
@@ -173,6 +180,7 @@ void JogoUno::Jogo(int numero_jogadores)
                 string cor;
                 cout << '\n' << "Qual cor quer escolher? Escreva a inicial (Opcoes: A, V, L, C)" <<'\n';
                 cin >> cor;
+                
                 pilha.push(cor);
                 goto FIM;
             }
