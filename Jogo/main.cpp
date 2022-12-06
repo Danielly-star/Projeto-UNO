@@ -21,6 +21,13 @@ int main()
     {
       NJOGADOR:  cout << '\n' << "Quantos jogadores irao jogar (2 a 9 jogadores)" << '\n';
         cin >> n_jogadores;
+        while (cin.fail())
+        {
+        cin.clear();
+        cin.ignore();
+        cout << "Escolha invalida, favor escrever somente numeros inteiros" << '\n';
+        cin >> n_jogadores;
+        }
         try
         {
             if(n_jogadores <2 or n_jogadores >9){
