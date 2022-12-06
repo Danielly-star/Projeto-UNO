@@ -140,9 +140,95 @@ else if (maos_dos_jogadores[jogador_atual-1][n_carta-1][0] == 'W') //se a carta 
 Depois se define o que será feito se a carta tiver cor
 ```
 else if (maos_dos_jogadores[jogador_atual-1][n_carta-1][0] != 'W' or maos_dos_jogadores[jogador_atual-1][n_carta-1][0] != 'Q') //se a carta escolhida nao for nem +4 nem WILD
-            {//Bilhoes de if's//}
-      
+            {//Bilhoes de if's//} 
  ```     
    
-   
+Após tudo isso temos que nos preocupar com a rotacao de jogadores e verificar se o jogo acabou ou nao
+
+A rotacao deve levar em conta coisas como esta bloqueado e esta revertido
+```
+FIM: if (Baralho.size() == 0)
+        {
+            cout << '\n' <<"Baralho acabou, fim de jogo";
+            std::cin.ignore();
+            abort();
+        }
+
+        
+        if (maos_dos_jogadores[jogador_atual-1].size() == 0)
+        {
+            cout << '\n' <<"O jogador " << jogador_atual << " venceu!!!" << '\n'
+            << "playing fogos_de_artificio.mp4";
+            std::cin.ignore();
+            abort();
+        }
+
+
+
+        //A parte abaixo faz a rotacao dos jogadores        
+        if (is_reversed == false & is_blocked == false)
+        {
+            if (jogador_atual == numero_jogadores)
+            {
+                jogador_atual = 1;
+                goto INICIO;
+            }
+            else{jogador_atual++;
+            goto INICIO;}
+        }
+        
+        else if (is_reversed == true & is_blocked == false)
+        {
+            if (jogador_atual == 1)
+            {
+                jogador_atual = numero_jogadores;
+                goto INICIO;
+            }
+            else{jogador_atual--;
+            goto INICIO;}
+        }
+        
+        else if (is_reversed == false & is_blocked == true)
+        {
+            if (jogador_atual == numero_jogadores - 1)
+            {
+                jogador_atual = 1;
+                is_blocked = false;
+                goto INICIO;
+            }
+            else if (jogador_atual == numero_jogadores)
+            {
+                jogador_atual = 2;
+                is_blocked = false;
+                goto INICIO;
+            }
+            else{jogador_atual = jogador_atual + 2;
+            is_blocked = false;
+            goto INICIO;}
+        }
+        
+        else if (is_reversed == true & is_blocked == true)
+        {
+            if (jogador_atual == 1)
+            {
+                jogador_atual = numero_jogadores -1;
+                is_blocked = false;
+                goto INICIO;
+            }
+            else if (jogador_atual == 2)
+            {
+                jogador_atual = numero_jogadores;
+                is_blocked = false;
+                goto INICIO;
+            }
+            else{jogador_atual = jogador_atual -2;
+            is_blocked = false;
+            goto INICIO;}
+        }
+
+    }
+        
+        
+}
+```
    
